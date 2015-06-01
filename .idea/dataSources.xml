@@ -7,5 +7,11 @@
       <jdbc-url>jdbc:sqlite:C:\Users\pk\projekty_github\strona\db\development.sqlite3</jdbc-url>
       <libraries />
     </data-source>
+    <data-source source="LOCAL" name="Rails strona-master: development" uuid="457194cf-7837-4676-92fd-9517f77f00ee">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\Users\pk\projekty_github\strona\db\development.sqlite3</jdbc-url>
+      <libraries />
+    </data-source>
   </component>
 </project>

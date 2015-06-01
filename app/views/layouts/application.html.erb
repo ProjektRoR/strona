@@ -16,13 +16,16 @@
   <nav id="niw">
     <% if @title_page != "zaloguj" %>
     <ul class="nav navbar-nav ">
+      <li><%= link_to "O nas",   static_pages_about_us_path %></li>
+      <li><%= link_to "Kontakt", static_pages_contact_path %></li>
+      <li><%= link_to "Regulamin", static_pages_terms_path %></li>
       <% if logged_in? %>
           <li><%= link_to session[:user_name] +" "+ session[:user_surname], user_path(current_user) %></li>
-          <li><%= link_to "Wyloguj", logout_path, method: "delete" %></li>
+          <li style="background-color: red;"><%= link_to "Wyloguj", logout_path, method: "delete" %></li>
       <% else %>
-          <li> <%= link_to "Zaloguj", login_path %> </li>
+          <li style="background-color: red;"> <%= link_to "Zaloguj", login_path %> </li>
       <% end %>
-      <li> <%= link_to "rejestracja", rejestruj_path %> </li>
+      <li style="background-color: red;"> <%= link_to "Rejestracja", rejestruj_path %> </li>
     </ul>
     <% end %>
   </nav>
@@ -45,9 +48,10 @@
 
 </div>
                   <div id="stopka">
-                    <small>© 2015</small>
+                    <small>Design by Piotr & Piotr ©2015 </small>
                     <nav>
                     <ul>
+                      <li><%= social_share_button_tag("My Site") %></li>
                       <li><%= link_to "O nas",   static_pages_about_us_path %></li>
                       <li><%= link_to "Kontakt", static_pages_contact_path %></li>
                       <li><%= link_to "Regulamin", static_pages_terms_path %></li>
@@ -61,6 +65,7 @@
       <li><%= link_to "O nas",   static_pages_about_us_path %></li>
       <li><%= link_to "Kontakt", static_pages_contact_path %></li>
       <li><%= link_to "Regulamin", static_pages_terms_path %></li>
+
     </ul>
   </nav>
 
