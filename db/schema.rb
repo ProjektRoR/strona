@@ -11,41 +11,53 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141222204512) do
+ActiveRecord::Schema.define(:version => 20150221183333) do
 
   create_table "books", :force => true do |t|
-    t.integer  "id_book"
     t.string   "title"
-    t.string   "autor"
-    t.integer  "id_publishing_house"
-    t.string   "image"
+    t.string   "author"
+    t.string   "publishing"
+    t.string   "genre"
+    t.integer  "user_id"
     t.string   "description"
-    t.string   "string"
-    t.datetime "created_at",          :null => false
-    t.datetime "updated_at",          :null => false
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
   end
+
+  create_table "microposts", :force => true do |t|
+    t.text     "content"
+    t.integer  "book_id"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "microposts", ["book_id"], :name => "index_microposts_on_book_id"
 
   create_table "opinions", :force => true do |t|
-    t.integer  "id_book"
-    t.integer  "id_user"
-    t.string   "text"
-    t.decimal  "number"
+    t.text     "content"
+    t.integer  "book_id"
+    t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
-  create_table "parkings", :force => true do |t|
-    t.string   "adres"
-    t.integer  "pojemnosc"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
+  add_index "opinions", ["book_id"], :name => "index_opinions_on_book_id"
 
-  create_table "publishing_houses", :force => true do |t|
-    t.integer  "id_book"
-    t.string   "name_publishing"
+  create_table "users", :force => true do |t|
+    t.string   "name"
+    t.string   "surname"
+    t.string   "mail"
+    t.string   "password"
+    t.string   "account_type"
+    t.string   "favourite"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+    t.string   "password_digest"
   end
 
 end

@@ -1,16 +1,33 @@
-RubyKsiazki::Application.routes.draw do
-  resources :opinions
+Strona::Application.routes.draw do
+
+  resources :microposts
 
 
-  resources :publishing_houses
-
-
+#get "static_pages/home"
+#get "static_pages/help"
+  resources :opinions, only: [:create, :destroy]
   resources :books
+  resources :users
+  get "sessions/new"
+  root to: "static_pages#home"
+  get    'login'   => 'sessions#new'
+  post   'login'   => 'sessions#create'
+  delete 'logout'  => 'sessions#destroy'
+  match '/opinia', to: 'books#dodaj_opinie'
+  match '/pomoc', to: 'static_pages#help'
+  match '/rejestruj', to: 'users#new'
+  match '/logout', to: 'sessions#destroy'
+  match '/powrut', to: 'users#show'
+ # match '/user_info', to: 'users#user_info'
+  get  'user_info'=> 'users#user_info'
+  put 'update_user_info'=> 'users#update_user_info'
+  match '/ksiazki_uzytkownika', to: 'books#wypisz_book_user'
+  match '/search', to: 'books#search'
+  match '/all_books', to: 'books#show_all_books'
+  get 'static_pages/about_us'
+  get 'static_pages/terms'
+  get 'static_pages/contact'
 
-
-  get "users/new"
-
-  resources :parkings
 
 
   # The priority is based upon order of creation:

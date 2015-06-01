@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-RubyKsiazki::Application.load_tasks
+Strona::Application.load_tasks
