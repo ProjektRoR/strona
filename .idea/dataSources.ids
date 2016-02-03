@@ -3,4 +3,10 @@
   <data-source name="Rails Strona: development" uuid="9e0168b3-d656-4e8d-99d3-d7f38d602210">
     <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
   </data-source>
+  <data-source name="Rails strona-master: development" uuid="457194cf-7837-4676-92fd-9517f77f00ee">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+  <data-source name="SQLite -" uuid="8b5784a9-1ca7-40c4-a2d6-317d6717a2c0">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
 </component>

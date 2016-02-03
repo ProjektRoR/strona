@@ -1,10 +1,10 @@
 class SessionsController < ApplicationController
   def new
-    @title_page = "zaloguj"
+    @title_page = "Zaloguj"
   end
 
   def create
-    @title_page = "zaloguj"
+    @title_page = "Zaloguj"
     user = User.find_by_mail(params[:session][:mail].downcase)
     if user && User.find_by_password(params[:session][:password])
       log_in user
@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
       redirect_back_or user
       flash[:success] = 'Pozytywne zalogowanie'
     else
-      flash[:danger] = 'Invalid email/password combination'
+      flash[:danger] = 'Niepoprawny login lub haslo!'
       render 'new'
     end
   end

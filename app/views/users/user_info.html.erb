@@ -30,7 +30,7 @@
   </div>
   <% end %>
   <div class="pasek">
-    <div>aktywność użtykownika:</div>
+    <div>Aktywność użtykownika:</div>
     Dodane książki przez użytkownika:<b> <%= Book.find_all_by_user_id(params[:id_u]).count %> </b> <br/>
     Dodane komentarze przez użytkownika:<b> <%= Micropost.find_all_by_user_id(params[:id_u]).count%> </b>
   </div>

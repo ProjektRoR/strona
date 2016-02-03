@@ -24,14 +24,15 @@
           <li style="background-color: red;"><%= link_to "Wyloguj", logout_path, method: "delete" %></li>
       <% else %>
           <li style="background-color: red;"> <%= link_to "Zaloguj", login_path %> </li>
+          <li style="background-color: red;"> <%= link_to "Rejestracja", rejestruj_path %> </li>
       <% end %>
-      <li style="background-color: red;"> <%= link_to "Rejestracja", rejestruj_path %> </li>
+      <!--li style="background-color: red;"> <%= link_to "Rejestracja", rejestruj_path %> </li-->
     </ul>
     <% end %>
   </nav>
   </div>
   <div id="wyszukiwanie">
-    <% if @title_page != "zaloguj" %>
+    <% if @title_page != "Zaloguj" && @title_page != "Panel administracyjny" %>
         <%= form_for Book.new, :url => "search" do |f| %>
             <div class="form-group">
               <%= f.label :Tytuł, class: "v" %>

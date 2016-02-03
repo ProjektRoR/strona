@@ -28,7 +28,7 @@ class UsersController < ApplicationController
   # GET /users/new
   # GET /users/new.json
   def new
-    @title_page = "rejestracja"
+    @title_page = "Rejestracja"
     @user = User.new
 
     respond_to do |format|
@@ -39,7 +39,7 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
-    @title_page = "edytuj dane"
+    @title_page = "Edytuj dane"
     @user = User.find(params[:id])
   end
 
@@ -61,7 +61,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.save
         log_in @user
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
+        format.html { redirect_to @user, notice: 'Konto uzytkownika zostalo poprawnie utworzone.' }
         format.json { render json: @user, status: :created, location: @user }
       else
         format.html { render action: "new" }
@@ -109,7 +109,7 @@ class UsersController < ApplicationController
  def logged_in_user
    unless logged_in?
      store_location
-     flash[:danger] = "Please log in."
+     flash[:danger] = "Prosze sie zalogowac."
      redirect_to login_path
    end
 

@@ -20,7 +20,7 @@
             <td><%= user.mail %></td>
             <td><%= user.account_type %></td>
             <td><%= link_to 'Informacja', user_info_path(:id_u => user) %></td>
-            <td><%= link_to 'Usuń konto', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><%= link_to 'Usuń konto', user, method: :delete, data: { confirm: 'Czy jesteś pewien?' } %></td>
           </tr>
       <% end %>
     </table>

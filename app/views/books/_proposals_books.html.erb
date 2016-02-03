@@ -1,6 +1,6 @@
 <div class="panel panel-default">
 <% if @user.favourite == nil %>
-    <h4> W tym momęcie brak propozycji </h4>
+    <h4> W tym momencie brak propozycji </h4>
 <% else %>
     <% boo = false %>
     <% @zmien = @user.favourite.split(",") %>
@@ -27,7 +27,7 @@
         <% end %>
         </table>
     <% if boo == false %>
-        <h4> w tym momęcie nie mamy propozycji </h4>
+        <h4>W tym momencie nie mamy propozycji </h4>
     <% end %>
 <% end %>
 </div>

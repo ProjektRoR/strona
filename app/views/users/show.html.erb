@@ -3,7 +3,7 @@
   <div id="dane">
     <p>
       <%= gravatar_for @user %>
-      <b>Imie i Nazwisko</b>
+      <b>Imię i Nazwisko</b>
     <h4> <%= @user.name %> <%= @user.surname %> </h4>
     </p>
     <p>
@@ -14,7 +14,7 @@
   <div id="menu_user">
     <ul class="nav nav-stacked">
       <li role="presentation"> <%= link_to 'Edytuj dane', edit_user_path(@user) %> </li>
-      <li role="presentation"> <%= link_to 'Dodaj ksiażke', new_book_path %> </li>
+      <li role="presentation"> <%= link_to 'Dodaj ksiażkę', new_book_path %> </li>
     </ul>
   </div>
   <% if @user.account_type == "admin" %>
@@ -31,7 +31,7 @@
       <li role="presentation"><a href="#tab-1">Dodane książki</a></li>
       <li role="presentation"><a href="#tab-2">Sugerowane książki</a></li>
       <% if @user.account_type == "admin" %>
-      <li role="presentation"><a href="#tab-3">aktualnosci</a></li>
+      <li role="presentation"><a href="#tab-3">Aktualności</a></li>
       <% end %>
     </ul>
   </div>
